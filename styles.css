@@ -1,3 +1,28 @@
+.download-qr-btn {
+  display: inline-block;
+  margin: 12px auto 0 auto;
+  padding: 10px 28px;
+  background: linear-gradient(90deg, #ad1457 60%, #f9d423 100%);
+  color: #fff;
+  font-family: "Baloo Da 2", "Hind Siliguri", "Noto Sans Bengali", sans-serif;
+  font-size: 1.08em;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  box-shadow:
+    0 2px 12px #ad145755,
+    0 0 8px #f9d42344;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.download-qr-btn:hover {
+  background: linear-gradient(90deg, #d81b60 60%, #f9d423 100%);
+  color: #fffde7;
+  transform: scale(1.06);
+}
 body {
   font-family: "Noto Sans Bengali", "SolaimanLipi", "Hind Siliguri", sans-serif;
   background: linear-gradient(120deg, #f9d423 0%, #ff4e50 100%);
@@ -232,17 +257,19 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
-  h2, .rhyme p, .qr-section p:first-child {
+  h2,
+  .rhyme p,
+  .qr-section p:first-child {
     font-size: 1em !important;
     padding: 4px 6px !important;
   }
-    .floating-confetti {
-        top: 8px;
-        right: 8px;
-        font-size: 1em;
-        padding: 8px 10px;
-        width: 150px;
-    }
+  .floating-confetti {
+    top: 8px;
+    right: 8px;
+    font-size: 1em;
+    padding: 8px 10px;
+    width: 150px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -250,7 +277,9 @@ footer {
     max-width: 98vw;
     padding: 10px 2vw 80px 2vw; /* More bottom padding for mobile */
   }
-  h2, .rhyme p, .qr-section p:first-child {
+  h2,
+  .rhyme p,
+  .qr-section p:first-child {
     font-size: 1em !important;
     padding: 4px 6px !important;
   }
@@ -266,8 +295,8 @@ footer {
   }
 }
 
-@media screen and (max-width:400px){
-.balloon{
+@media screen and (max-width: 400px) {
+  .balloon {
     width: 60px;
     top: 30px;
     left: 0 !important;
