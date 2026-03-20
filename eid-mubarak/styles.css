@@ -1,0 +1,286 @@
+body {
+  font-family: "Noto Sans Bengali", "SolaimanLipi", "Hind Siliguri", sans-serif;
+  background: linear-gradient(120deg, #f9d423 0%, #ff4e50 100%);
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 600px;
+  margin: 5px auto 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  padding: 32px 24px 64px 24px; /* Increased bottom padding for footer */
+  text-align: center;
+  position: relative;
+}
+
+.eid-header {
+  position: relative;
+  margin-bottom: 0.5em;
+  min-height: 120px;
+}
+.eid-moon.left {
+  display: none;
+}
+.eid-moon.main {
+  width: 220px;
+  display: block;
+  margin: 0 auto 0.5em auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  filter: drop-shadow(0 0 48px #fff8) drop-shadow(0 0 24px #e65100cc);
+  z-index: 5;
+  animation: moon-glow 2.5s infinite alternate;
+}
+@keyframes moon-glow {
+  0% {
+    filter: drop-shadow(0 0 16px #fff8) drop-shadow(0 0 8px #e65100cc);
+  }
+  100% {
+    filter: drop-shadow(0 0 48px #fff) drop-shadow(0 0 32px #e65100);
+  }
+}
+.balloon {
+  width: 120px;
+  position: absolute;
+  top: 80px;
+  z-index: 2;
+  animation: balloon-float 3s infinite ease-in-out alternate;
+}
+.left-balloon {
+  left: -25px;
+  animation-delay: 0.5s;
+}
+.right-balloon {
+  right: -25px;
+  animation-delay: 1.2s;
+}
+@keyframes balloon-float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(-24px) scale(1.12);
+  }
+}
+h2 {
+  color: #ad1457;
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-family:
+    "Baloo Da 2", "Hind Siliguri", "Noto Sans Bengali", cursive, sans-serif;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-shadow:
+    0 2px 12px #fff7,
+    0 0px 2px #ad1457,
+    0 0 8px #f9d42355;
+  background: linear-gradient(90deg, #fffbe7 60%, #ffe0e3 100%);
+  border-radius: 10px;
+  display: inline-block;
+  padding: 6px 18px 6px 18px;
+  box-shadow: 0 2px 8px #f9d42322;
+}
+.rhyme p {
+  color: #d81b60;
+  font-size: 1.28em;
+  margin: 0.5em 0;
+  font-family:
+    "Baloo Da 2", "Hind Siliguri", "Noto Sans Bengali", cursive, sans-serif;
+  background: linear-gradient(90deg, #fffbe7 60%, #ffe0e3 100%);
+  border-radius: 16px;
+  padding: 10px 0 10px 0;
+  box-shadow:
+    0 2px 16px #f9d42333,
+    0 0 12px #ad145733;
+  font-weight: 900;
+  text-shadow:
+    0 2px 8px #fff7,
+    0 0px 2px #ad1457,
+    0 0 8px #f9d42355;
+  letter-spacing: 1.3px;
+}
+.qr-section {
+  margin: 1em 0 1em 0;
+}
+.qr-section p:first-child {
+  font-family:
+    "Baloo Da 2", "Hind Siliguri", "Noto Sans Bengali", cursive, sans-serif;
+  color: #ad1457;
+  font-weight: 800;
+  text-shadow:
+    0 2px 8px #fff7,
+    0 0px 2px #ad1457,
+    0 0 8px #f9d42355;
+  letter-spacing: 1.1px;
+  background: linear-gradient(90deg, #fffbe7 60%, #ffe0e3 100%);
+  border-radius: 10px;
+  display: inline-block;
+  padding: 4px 16px 4px 16px;
+  box-shadow: 0 2px 8px #f9d42322;
+}
+.qr-section img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  border: 2px solid #ad1457;
+  margin-bottom: 0.5em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bkash-number {
+  font-size: 1.1em;
+  color: #d81b60;
+  margin-top: 0.5em;
+}
+.floating-confetti {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  background: linear-gradient(90deg, #43a047 60%, #f9d423 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50px 50px 50px 0;
+  padding: 12px 22px 12px 22px;
+  font-size: 1.18em;
+  font-weight: bold;
+  box-shadow:
+    0 4px 24px #43a04755,
+    0 2px 8px #f9d42344;
+  cursor: pointer;
+  z-index: 20;
+  outline: 3px solid #fff7;
+  outline-offset: 2px;
+  animation: confetti-pop 1.2s infinite alternate;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.floating-confetti:hover {
+  background: linear-gradient(90deg, #388e3c 60%, #f9d423 100%);
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow:
+    0 8px 32px #43a04799,
+    0 4px 16px #f9d42366;
+}
+@keyframes confetti-pop {
+  0% {
+    box-shadow:
+      0 4px 24px #43a04755,
+      0 2px 8px #f9d42344;
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    box-shadow:
+      0 8px 32px #43a04799,
+      0 4px 16px #f9d42366;
+    transform: scale(1.07) rotate(2deg);
+  }
+}
+#confetti {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 100;
+  display: none;
+}
+footer {
+  text-align: center;
+  color: #fff;
+  margin-top: 2em;
+  font-size: 1.1em;
+  letter-spacing: 1.5px;
+  background: rgba(173, 20, 87, 0.8);
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 -4px 24px rgba(173, 20, 87, 0.15);
+  padding: 4px 0 10px 0;
+  text-shadow:
+    0 2px 8px #ad1457,
+    0 0px 2px #fff;
+  border-top: 2px solid #fff3;
+  font-weight: bold;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  z-index: 10;
+  animation: footer-glow 2.5s infinite alternate;
+}
+
+@keyframes footer-glow {
+  0% {
+    box-shadow:
+      0 -4px 24px #ad145744,
+      0 0 8px #fff0;
+  }
+  100% {
+    box-shadow:
+      0 -8px 32px #ad1457cc,
+      0 0 16px #fff3;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h2, .rhyme p, .qr-section p:first-child {
+    font-size: 1em !important;
+    padding: 4px 6px !important;
+  }
+    .floating-confetti {
+        top: 8px;
+        right: 8px;
+        font-size: 1em;
+        padding: 8px 10px;
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 98vw;
+    padding: 10px 2vw 80px 2vw; /* More bottom padding for mobile */
+  }
+  h2, .rhyme p, .qr-section p:first-child {
+    font-size: 1em !important;
+    padding: 4px 6px !important;
+  }
+  .qr-section img {
+    max-width: 90vw;
+  }
+  .floating-confetti {
+    top: 8px;
+    right: 8px;
+    font-size: 1em;
+    padding: 4px 4px;
+    width: 150px;
+  }
+}
+
+@media screen and (max-width:400px){
+.balloon{
+    width: 60px;
+    top: 30px;
+    left: 0 !important;
+    right: 0 !important;
+  }
+  .left-balloon {
+    left: -10px !important;
+  }
+  .right-balloon {
+    right: -10px !important;
+  }
+  .floating-confetti {
+    padding: 1px 2px;
+    width: 100px;
+  }
+}
