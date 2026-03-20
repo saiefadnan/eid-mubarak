@@ -1,10 +1,13 @@
 // Confetti animation
 const confettiBtn = document.getElementById("confettiBtn");
 const confettiCanvas = document.getElementById("confetti");
-const ctx = confettiCanvas.getContext("2d");
+let ctx = null;
+if (confettiCanvas)
+  ctx = confettiCanvas.getContext && confettiCanvas.getContext("2d");
 let confettiParticles = [];
 
 function resizeCanvas() {
+  if (!confettiCanvas) return;
   confettiCanvas.width = window.innerWidth;
   confettiCanvas.height = window.innerHeight;
 }
@@ -38,6 +41,7 @@ function createConfetti() {
 }
 
 function drawConfetti() {
+  if (!ctx) return;
   ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
   confettiParticles.forEach((p) => {
     ctx.beginPath();
@@ -67,13 +71,55 @@ function animateConfetti() {
   requestAnimationFrame(animateConfetti);
 }
 
-confettiBtn.addEventListener("click", () => {
-  confettiCanvas.style.display = "block";
-  createConfetti();
-  confettiActive = true;
-  animateConfetti();
-  setTimeout(() => {
-    confettiActive = false;
-    confettiCanvas.style.display = "none";
-  }, 3500);
-});
+if (confettiBtn) {
+  confettiBtn.addEventListener("click", () => {
+    if (!confettiCanvas) return;
+    confettiCanvas.style.display = "block";
+    createConfetti();
+    confettiActive = true;
+    animateConfetti();
+    setTimeout(() => {
+      confettiActive = false;
+      confettiCanvas.style.display = "none";
+    }, 3500);
+  });
+}
+
+// Visitor counter using CountAPI (no backend)
+// Namespace and key can be changed; this uses a public key per site.
+const visitorSpan = document.getElementById("visitorCount");
+const countKey = "eid-mubarak-saiefadnan";
+const countNamespace = "visitor-counter";
+
+function updateVisitorCount() {
+  if (!visitorSpan) return;
+  const localKey = "eid-mubarak-visited";
+  if (!localStorage.getItem(localKey)) {
+    // First visit in this browser: increment and get
+    fetch(`https://api.countapi.xyz/hit/${countNamespace}/${countKey}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.value !== undefined) {
+          visitorSpan.textContent = data.value;
+          localStorage.setItem(localKey, "1");
+        }
+      })
+      .catch(() => {
+        visitorSpan.textContent = "0";
+      });
+  } else {
+    // Already visited: just get the count
+    fetch(`https://api.countapi.xyz/get/${countNamespace}/${countKey}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.value !== undefined) {
+          visitorSpan.textContent = data.value;
+        }
+      })
+      .catch(() => {
+        visitorSpan.textContent = "0";
+      });
+  }
+}
+
+updateVisitorCount();

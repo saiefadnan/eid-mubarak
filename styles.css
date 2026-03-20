@@ -1,3 +1,22 @@
+/* Visitor count top left, light color, eye icon */
+.visitor-count {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-family: "Baloo Da 2", "Hind Siliguri", "Noto Sans Bengali", sans-serif;
+  color: #c7a7c7;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  padding: 4px 14px 4px 8px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #ad14571a;
+  font-size: 1.13em;
+  z-index: 30;
+  user-select: none;
+  gap: 2px;
+}
 .download-qr-btn {
   display: inline-block;
   margin: 12px auto 0 auto;
